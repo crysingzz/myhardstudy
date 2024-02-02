@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int INF = 10e7;
+
+int findMAX(vector<pair<int, int>>& nums)
+{
+	int mx = 0;
+	int it = INF;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		if (nums[i].second > mx)
+		{
+			mx = nums[i].second;
+			it = i;
+		}
+	}
+	return it;
+}
+int main() {
+	int n, m;
+	cin >> n >> m;
+	vector<pair<int, int>> numsN(n);
+	vector<pair<int, int>> numsM(m);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> numsN[i].first >> numsN[i].second;
+	}
+	for (int i = 0; i < m; i++)
+	{
+		cin >> numsM[i].first >> numsM[i].second;
+	}
+	cout << numsN[findMAX(numsN)].first << " " << numsM[findMAX(numsM)].first;
+
+
+	
+}
