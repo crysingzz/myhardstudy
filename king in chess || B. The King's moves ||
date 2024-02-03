@@ -21,4 +21,11 @@ int main() {
 	{
 		cout << 8;
 	}
+/*we need to know how many moves the king has
+we can detect, that king has 8 moves in every point, except sides
+we have 3 case:
+	1. king in the corner -> 3 moves
+	2. king in the side, but not in the corner -> 5 moves
+	3. king on board -> 8 moves
+*/
 }
